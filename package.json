@@ -1,0 +1,24 @@
+{
+  "name": "archbot",
+  "version": "1.0.0",
+  "description": "Um bot incrivel para Whatsapp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ansi-colors": "^4.1.3",
+    "axios": "^1.6.5",
+    "chokidar": "^3.5.3",
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "moment-timezone": "^0.5.44",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "qrcode-terminal": "^0.12.0",
+    "url-regex": "^5.0.0",
+    "whatsapp-web.js": "^1.23.0"
+  }
+}
