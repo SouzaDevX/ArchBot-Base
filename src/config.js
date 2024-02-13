@@ -6,4 +6,4 @@ exports.COMMANDS_DIR = path.join(__dirname, "commands");
 
 //Bot
 exports.PREFIXES = /^[\/\.\!\?\#\$\^\*\,\~\-\&\+\_\*\|\;]/;
-exports.OWNER_NUMBER = "559891781819";
+exports.OWNER_NUMBER = "Seu Número";
