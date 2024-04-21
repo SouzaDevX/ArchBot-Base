@@ -3,7 +3,6 @@
 	• Repositório: https://github.com/neb6la/ArchBot-Base
 */
 
-
 const { onMessages } = require("./middlewares/onMessages");
 
 // Carregando Eventos
