@@ -28,7 +28,6 @@ module.exports = async () => {
       /* executablePath: "/usr/bin/chromium-browser",
       -- Geralmente, não é necessário configurar o diretório do navegador.
       */
-      executablePath: "/usr/bin/chromium-browser",
       headless: true,
       ignoreDefaultArgs: ["--enable-automation", "--disable-dev-shm-usage"],
       args: ["--no-sandbox", "--disable-gpu", "--disable-setuid-sandbox", "--disable-background-timer-throttling", "--disable-backgrounding-occluded-windows", "--disable-renderer-backgrounding"],
