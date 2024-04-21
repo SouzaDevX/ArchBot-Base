@@ -1,13 +1,20 @@
+/*
+	• Instagram: @ind0minous
+	• Repositório: https://github.com/neb6la/ArchBot-Base
+*/
+
+
 const { onMessages } = require("./middlewares/onMessages");
 
-exports.load = async (client) => {
-  client.on("message", async (msg) => {
-    await onMessages(client, msg);
+// Carregando Eventos
+module.exports = async (client) => {
+  client.on("message_create", async (m) => {
+    if (m.fromMe) return;
+    await onMessages(client, m);
   });
 
-  client.on("message_edit", async (msg) => {
-    if (msg.fromMe) return;
-
-    await onMessages(client, msg);
+  client.on("message_edit", async (m) => {
+    if (m.fromMe) return;
+    await onMessages(client, m);
   });
 };
