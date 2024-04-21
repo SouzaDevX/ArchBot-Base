@@ -1,4 +1,4 @@
 node_modules
-asset/auth
+asset/auth/*
 .wwebjs_cache/
 store/
