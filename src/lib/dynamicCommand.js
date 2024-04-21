@@ -87,9 +87,15 @@ ${otherSimilarCommands}`);
 };
 
 function findMostSimilarCommand(inputCommand, validCommands) {
+  if (typeof inputCommand !== "string" || !validCommands.length) {
+    return [];
+  }
   const mostSimilarCommands = [];
 
   validCommands.forEach((command) => {
+    if (typeof command !== "string") {
+      return;
+    }
     const distance = natural.LevenshteinDistance(inputCommand, command);
     const similarity = (1 - distance / Math.max(inputCommand.length, command.length)) * 100;
 
