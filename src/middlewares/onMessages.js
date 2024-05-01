@@ -10,7 +10,6 @@ const { expandClient } = require("../lib/expandClient");
 // Ação ao receber uma mensagem
 exports.onMessages = async (client, m) => {
   // Adicionando informações adicionais no objeto de mensagem/client
-  client = await expandClient(client, m);
   m = await contentMsg(client, m);
 
   // Executar o comando
