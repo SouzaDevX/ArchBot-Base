@@ -9,7 +9,9 @@ const color = require("cli-color");
 const { config } = require("./config");
 const readline = require("readline");
 const path = require("path");
-const { onlyNumbers } = require("./lib");
+const { onlyNumbers } = require("./lib/function");
+const { expandClient } = require("./lib/expandClient");
+const cron = require("node-cron");
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -35,6 +37,18 @@ module.exports = async () => {
     },
     restartOnAuthFail: true,
   });
+
+  cron.schedule(
+    "0 0 * * *",
+    async () => {
+      await client.destroy();
+      await client.initialize();
+      console.log(color.green("[BROWSER]"), "Reiniciando o navegador...");
+    },
+    {
+      timezone: "America/Sao_Paulo",
+    },
+  );
 
   let readyCount = 0;
 
@@ -104,6 +118,8 @@ module.exports = async () => {
   client.on("disconnected", (reason) => {
     console.log(color.green("[WWEB]"), color.redBright("Conexão encerrada: "), reason);
   });
+
+  await expandClient(client);
 
   client.initialize();
 
