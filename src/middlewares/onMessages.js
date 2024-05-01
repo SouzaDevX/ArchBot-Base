@@ -4,8 +4,8 @@
 */
 
 
-const { contentMsg, dynamicCommand } = require("../lib");
-const { expandClient } = require("../lib/expandClient");
+const { dynamicCommand } = require("../lib/dynamicCommand");
+const { contentMsg } = require("../lib/contentMsg");
 
 // Ação ao receber uma mensagem
 exports.onMessages = async (client, m) => {
